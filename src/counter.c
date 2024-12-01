@@ -4,8 +4,11 @@
 // Function to count characters
 int count_characters(const char *text) {
     int count = 0;
-    while (*text++) {
-        count++;
+    while (*text) {
+        if (*text != ' ' && *text != '\n' && *text != '\t') {
+            count++;
+        }
+        text++;
     }
     return count;
 }
